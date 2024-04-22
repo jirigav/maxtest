@@ -52,6 +52,8 @@ pub(crate) struct Args {
 fn main() {
     let args = Args::parse();
 
+    println!("{:?}", args);
+
     let data = load_data(&args.input_file_path, args.block_size);
     let (training_data, testing_data) = data.split_at(data.len()/2);
     
