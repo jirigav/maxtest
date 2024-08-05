@@ -1,4 +1,4 @@
-# MaxTest
+# ReBoolTest
 
 This repository contains an implementation of an algorithm for randomness testing presented by Chatterjee et al. [1]
 
@@ -10,7 +10,7 @@ You need to have [Rust](https://www.rust-lang.org/tools/install) and Python libr
 
 Compile using `cargo build --release`
 
-Use `./target/release/maxtest <BLOCK_SIZE> <DATA>` 
+Use `./target/release/rebooltest <BLOCK_SIZE> <DATA>` 
 
 The tool divides the provided data into halves, on the first half, it finds a distinguisher producing maximum Z-score and then evaluates the distinguisher on the second half. 
 

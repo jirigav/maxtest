@@ -21,10 +21,8 @@ fn load_data(path: &str, block_size: usize) -> Vec<Vec<u8>> {
 pub(crate) fn p_value(positive: usize, sample_size: usize, probability: f64) -> f64 {
     pyo3::prepare_freethreaded_python();
     Python::with_gil(|py| {
-        let scipy = PyModule::import(py, "scipy").unwrap();
+        let scipy = PyModule::import(py, "scipy.stats").unwrap();
         let result: f64 = scipy
-            .getattr("stats")
-            .unwrap()
             .getattr("binomtest")
             .unwrap()
             .call1((positive, sample_size, probability, "two-sided"))
